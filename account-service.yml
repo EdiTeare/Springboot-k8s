@@ -29,6 +29,6 @@ metadata:
 spec:
   ports:
     - targetPort: 9001
-      port: 80
+      port: 9001
   selector:
     app: account-service-app
