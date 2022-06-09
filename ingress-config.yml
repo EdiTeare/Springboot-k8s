@@ -10,6 +10,6 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: api-gateway-app-service
+                name: cloud-gateway-svc
                 port:
                   number: 9191

@@ -20,16 +20,23 @@ spec:
           ports:
             - containerPort: 5432
           env:
+            - name: POSTGRES_USER
+              value: postgres
             - name: POSTGRES_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: paymentdb-secret
-                  key: postgres-root-password
-            - name: POSTGRES_DATABASE
-              valueFrom:
-                configMapKeyRef:
-                  name: paymentdb-config
-                  key: db_name
+              value: password
+            - name: POSTGRES_DB
+              value: paymentdb
+          # env:
+          #   - name: POSTGRES_PASSWORD
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: paymentdb-secret
+          #         key: postgres-root-password
+          #   - name: POSTGRES_DATABASE
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: paymentdb-config
+          #         key: db_name
 ---
 apiVersion: v1
 kind: Service
